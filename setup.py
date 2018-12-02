@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='module-discovery-utils',
-    version='1.0.1',
+    version='1.1.1',
     packages=['module_discovery_utils'],
     url='https://github.com/zsennenga/module-discovery-utils',
     license='Apache License 2.0',

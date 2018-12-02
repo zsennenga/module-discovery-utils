@@ -35,6 +35,12 @@ def load_all_modules_in_packages(package_or_set_of_packages):
             if ispkg:
                 imported += load_all_modules_in_packages(current_module)
 
+    for module in imported:
+        # This is to cover cases where simply importing a module doesn't execute all the code/definitions within
+        # I don't totally understand the reasons for this, but I do know enumerating a module's context (like with dir)
+        # seems to solve things
+        dir(module)
+
     return list(
         {
             module.__name__: module
